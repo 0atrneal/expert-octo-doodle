@@ -106,31 +106,26 @@
   }
 
   .learning-section {
-    background: rgba(0, 255, 0, 0.06);
-    border: 2px solid #00ff66;
-    border-radius: 10px;
-    padding: 30px;
     width: 85%;
     max-width: 800px;
-    box-shadow: 0 0 30px #00ff99;
     color: #b6ffb6;
-    text-align: left;
-    margin-bottom: 60px;
-  }
-
-  .learning-section h2 {
-    color: #00ff99;
-    text-shadow: 0 0 15px #00ff66;
     text-align: center;
-    font-size: 26px;
-    margin-bottom: 15px;
+    margin: 0 auto 80px auto;
+    font-size: 18px;
+    line-height: 1.8;
   }
 
   .learning-section ul {
-    list-style-type: "✅ ";
-    padding-left: 25px;
-    font-size: 18px;
-    line-height: 1.7;
+    list-style-type: disc;
+    list-style-position: inside;
+    text-align: left;
+    display: inline-block;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .learning-section li {
+    margin-bottom: 12px;
   }
 
   footer {
@@ -205,7 +200,6 @@
   <img src="phishing_mail.png" alt="Phishing Email Example">
 </div>
 
-<!-- Centered Learning Section -->
 <div class="learning-section">
   <ul>
     <li>Check the sender’s email address carefully for subtle spelling mistakes or added characters.</li>
