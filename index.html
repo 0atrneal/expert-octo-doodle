@@ -81,6 +81,15 @@
     text-shadow: 0 0 15px #ff0000;
   }
 
+  .phish-heading {
+    font-size: 28px;
+    color: #ff6666;
+    text-shadow: 0 0 20px #ff0000;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
   .phish-image {
     display: flex;
     justify-content: center;
@@ -94,6 +103,34 @@
     border: 2px solid #ff0000;
     border-radius: 10px;
     box-shadow: 0 0 40px #ff0000;
+  }
+
+  .learning-section {
+    background: rgba(0, 255, 0, 0.06);
+    border: 2px solid #00ff66;
+    border-radius: 10px;
+    padding: 30px;
+    width: 85%;
+    max-width: 800px;
+    box-shadow: 0 0 30px #00ff99;
+    color: #b6ffb6;
+    text-align: left;
+    margin-bottom: 60px;
+  }
+
+  .learning-section h2 {
+    color: #00ff99;
+    text-shadow: 0 0 15px #00ff66;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .learning-section ul {
+    list-style-type: "✅ ";
+    padding-left: 25px;
+    font-size: 18px;
+    line-height: 1.7;
   }
 
   footer {
@@ -157,6 +194,8 @@
     This exercise is part of our continuous effort to strengthen cybersecurity awareness across Amin Holdings and Avo Automation.  
   </p>
   <div class="glow-line"></div>
+  <!-- Heading before image -->
+  <h2 class="phish-heading">🔍 Check the mistakes in the mail below!</h2>
 </div>
 
 <div class="matrix-bg"></div>
@@ -164,6 +203,19 @@
 <!-- 📸 Inserted image section -->
 <div class="phish-image">
   <img src="phishing_mail.png" alt="Phishing Email Example">
+</div>
+
+<!-- Learning / Awareness Section -->
+<div class="learning-section">
+  <h2>🧠 How to Identify a Phishing Email</h2>
+  <ul>
+    <li><strong>Check the sender’s address</strong> — subtle misspellings or extra characters are common red flags.</li>
+    <li><strong>Look for spelling & grammar mistakes</strong> — phishing emails often contain errors or awkward phrasing.</li>
+    <li><strong>Hover over links</strong> — verify where they lead before clicking. Suspicious or shortened links are a warning sign.</li>
+    <li><strong>Be cautious with urgency</strong> — phrases like “Act Now!” or “Limited Time Offer!” are designed to rush you.</li>
+    <li><strong>Never share sensitive information</strong> via email forms or attachments unless verified through official channels.</li>
+    <li><strong>Check the tone and branding</strong> — legitimate corporate messages usually have consistent design and tone.</li>
+  </ul>
 </div>
 
 <footer>
