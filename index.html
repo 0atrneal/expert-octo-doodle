@@ -1,192 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You Have Been Phished!</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    background: radial-gradient(circle at center, #300000 0%, #000000 80%);
-    background-attachment: fixed;
-    overflow-x: hidden; /* ❌ no horizontal scroll */
-    overflow-y: auto;   /* ✅ allow vertical scroll */
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Have Been Phished!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Inter:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      background: radial-gradient(circle at center, #300000 0%, #000000 80%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      /* ❌ no horizontal scroll */
+      overflow-y: auto;
+      /* ✅ allow vertical scroll */
+    }
 
-  .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    text-align: center;
-    padding: 20px 20px;
-  }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      text-align: center;
+      padding: 20px 20px;
+    }
 
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 70px;
-    color: #ff1e1e;
-    text-shadow: 0 0 30px #ff0000, 0 0 70px #ff0000, 0 0 120px #ff0000;
-    animation: flicker 2s infinite;
-  }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 70px;
+      color: #ff1e1e;
+      text-shadow: 0 0 30px #ff0000, 0 0 70px #ff0000, 0 0 120px #ff0000;
+      animation: flicker 2s infinite;
+    }
 
-  @keyframes flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-    20%, 24%, 55% { opacity: 0.3; }
-  }
+    @keyframes flicker {
 
-  .alert-box {
-    background: rgba(255, 0, 0, 0.08);
-    border: 2px solid #ff1e1e;
-    border-radius: 10px;
-    padding: 30px;
-    width: 85%;
-    max-width: 800px;
-    margin-top: 40px;
-    box-shadow: 0 0 40px #ff0000;
-  }
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
+        opacity: 1;
+      }
 
-  .alert-box h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
+      20%,
+      24%,
+      55% {
+        opacity: 0.3;
+      }
+    }
 
-  .alert-box p {
-    font-size: 18px;
-    color: #ffdcdc;
-    line-height: 1.6;
-  }
+    .alert-box {
+      background: rgba(255, 0, 0, 0.08);
+      border: 2px solid #ff1e1e;
+      border-radius: 10px;
+      padding: 30px;
+      width: 85%;
+      max-width: 800px;
+      margin-top: 40px;
+      box-shadow: 0 0 40px #ff0000;
+    }
 
-  .flashing-border {
-    animation: pulseBorder 1.8s infinite;
-  }
+    .alert-box h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff4d4d;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
 
-  @keyframes pulseBorder {
-    0%, 100% { box-shadow: 0 0 30px 5px #ff0000; }
-    50% { box-shadow: 0 0 60px 15px #ff4d4d; }
-  }
+    .alert-box p {
+      font-size: 18px;
+      color: #ffdcdc;
+      line-height: 1.6;
+    }
 
-  .warning {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 50px;
-    text-transform: uppercase;
-    color: #ffb3b3;
-    text-shadow: 0 0 15px #ff0000;
-  }
+    .flashing-border {
+      animation: pulseBorder 1.8s infinite;
+    }
 
-  .phish-heading {
-    font-size: 28px;
-    color: #ff6666;
-    text-shadow: 0 0 20px #ff0000;
-    margin-top: 40px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+    @keyframes pulseBorder {
 
-  .phish-image {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 60px;
-  }
+      0%,
+      100% {
+        box-shadow: 0 0 30px 5px #ff0000;
+      }
 
-  .phish-image img {
-    max-width: 90%;
-    height: auto;
-    border: 2px solid #ff0000;
-    border-radius: 10px;
-    box-shadow: 0 0 40px #ff0000;
-  }
+      50% {
+        box-shadow: 0 0 60px 15px #ff4d4d;
+      }
+    }
 
-  footer {
-    width: 100%;
-    text-align: center;
-    margin-top: 100px;
-    padding: 25px 0;
-    background: rgba(0, 0, 0, 0.85);
-    border-top: 1px solid #660000;
-    font-size: 16px;
-    color: #ffb3b3;
-  }
+    .warning {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 50px;
+      text-transform: uppercase;
+      color: #ffb3b3;
+      text-shadow: 0 0 15px #ff0000;
+    }
 
-  footer a {
-    color: #ff4d4d;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    .phish-heading {
+      font-size: 28px;
+      color: #ff6666;
+      text-shadow: 0 0 20px #ff0000;
+      margin-top: 40px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
 
-  .glow-line {
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #ff0000, transparent);
-    margin: 40px 0;
-    animation: scan 3s linear infinite;
-  }
+    .phish-image {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
 
-  @keyframes scan {
-    0% {opacity: 0;}
-    50% {opacity: 1;}
-    100% {opacity: 0;}
-  }
+    .phish-image img {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #ff0000;
+      border-radius: 10px;
+      box-shadow: 0 0 40px #ff0000;
+    }
 
-  .matrix-bg {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image: radial-gradient(rgba(255, 0, 0, 0.04) 1px, transparent 1px);
-    background-size: 20px 20px;
-    pointer-events: none;
-    z-index: 0;
-  }
+    footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      padding: 25px 0;
+      background: rgba(0, 0, 0, 0.85);
+      border-top: 1px solid #660000;
+      font-size: 16px;
+      color: #ffb3b3;
+    }
 
-  .content {
-    position: relative;
-    z-index: 1;
-  }
-</style>
+    footer a {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .glow-line {
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+      margin: 40px 0;
+      animation: scan 3s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(255, 0, 0, 0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="matrix-bg"></div>
+  <div class="matrix-bg"></div>
 
-<div class="container content">
-  <h1>⚠️ YOU HAVE BEEN PHISHED ⚠️</h1>
+  <div class="container content">
+    <h1>⚠️ YOU HAVE BEEN PHISHED ⚠️</h1>
 
-  <div class="glow-line"></div>
+    <div class="glow-line"></div>
 
-  <p class="warning">THIS IS A PHISHING SIMULATION CONDUCTED BY ESQA</p>
-  <p style="font-size: 18px; color: #ffcccc; margin-top: 10px; max-width: 700px;">
-    This exercise is part of our continuous effort to strengthen cybersecurity awareness across Amin Holdings and Avo Automation.  
-  </p>
-  <div class="glow-line"></div>
-  <!-- Heading before image -->
-  <h2 class="phish-heading">Check the mistakes in the mail below!</h2>
-</div>
+    <p class="warning">THIS IS A PHISHING SIMULATION CONDUCTED BY ESQA</p>
+    <p style="font-size: 18px; color: #ffcccc; margin-top: 10px; max-width: 700px;">
+      This exercise is part of our continuous effort to strengthen cybersecurity awareness across Amin Holdings and Avo
+      Automation.
+    </p>
+    <div class="glow-line"></div>
+    <!-- Heading before image -->
+    <h2 class="phish-heading">Check the mistakes in the mail below!</h2>
+    <!-- 📸 Inserted image section -->
+    <div class="phish-image">
+      <img src="phishing_mail.png" alt="Phishing Email Example">
+    </div>
+    <div class="glow-line"></div>
+    <p style="font-size: 18px; color: #ffcccc; margin-top: 10px; max-width: 700px;">
+      Good thing this was a test; next time, your click could cost us everything.<br>THINK BEFORE YOU CLICK!
+    </p>
 
-<div class="matrix-bg"></div>
-  
-<!-- 📸 Inserted image section -->
-<div class="phish-image">
-  <img src="phishing_mail.png" alt="Phishing Email Example">
-</div>
+  </div>
 
-<p style="font-size: 18px; color: #ffcccc; margin-top: 10px; max-width: 700px;">
-    This exercise is part of our continuous effort to strengthen cybersecurity awareness across Amin Holdings and Avo Automation.  
-</p>
+  <div class="matrix-bg"></div>
 
-<footer>
-  ⚠️ If this had been a real incident, your details would have been compromised.  
-  <br>
-  For any doubts or clarifications, contact <strong><i>ESQA</i></strong>  
-  <br>© 2025 Enterprise Security Quality and Audits - ESQA
-</footer>
+  <footer>
+    ⚠️ If this had been a real incident, your details would have been compromised.
+    <br>
+    For any doubts or clarifications, contact <strong><i>ESQA</i></strong>
+    <br>© 2025 Enterprise Security Quality and Audits - ESQA
+  </footer>
 
 </body>
+
 </html>
